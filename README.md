@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NextLearn — AI-Powered Learning Platform
 
-## Getting Started
+![NextLearn](public/hero-bg.png)
 
-First, run the development server:
+## О проекте
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NextLearn — это современная образовательная платформа нового поколения, построенная на базе искусственного интеллекта. Платформа адаптирует учебный процесс под каждого студента, обеспечивая максимально эффективное обучение.
+
+## Функциональность
+
+- **Hero секция** — анимированный лендинг с градиентными кнопками и фоновым изображением
+- **Features** — 6 преимуществ платформы с анимированными карточками
+- **Solutions** — каталог из 6 популярных курсов с мета-информацией
+- **Roadmap** — временная шкала развития продукта
+- **Testimonials** — отзывы студентов с JSON-LD разметкой schema.org
+- **Footer** — навигация, контакты и CTA баннер
+
+## Технологии
+
+| Технология | Версия | Назначение |
+|-----------|--------|-----------|
+| Next.js | 16 | React фреймворк |
+| TypeScript | 5 | Типизация |
+| Tailwind CSS | 3.4 | Стилизация |
+| Framer Motion | 12 | Анимации |
+| Zustand | 5 | State management |
+| Lucide React | 0.575 | Иконки |
+
+## Структура проекта
+```
+nextlearn/
+├── public/
+│   └── hero-bg.png
+├── src/
+│   ├── app/
+│   │   ├── globals.css
+│   │   ├── layout.tsx       # SEO, metadata, OpenGraph
+│   │   └── page.tsx         # Главная страница
+│   ├── components/
+│   │   ├── sections/
+│   │   │   ├── Hero.tsx
+│   │   │   ├── Features.tsx
+│   │   │   ├── Solutions.tsx
+│   │   │   ├── Roadmap.tsx
+│   │   │   ├── Testimonials.tsx
+│   │   │   └── Footer.tsx
+│   │   └── ui/
+│   │       └── Navbar.tsx
+│   ├── store/
+│   │   └── useAppStore.ts   # Zustand store
+│   └── types/
+│       └── index.ts
+├── tailwind.config.ts
+├── postcss.config.mjs
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Запуск проекта
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Установка зависимостей
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Запуск в режиме разработки
+```bash
+npm run dev
+```
 
-## Learn More
+Открой [http://localhost:3000](http://localhost:3000)
 
-To learn more about Next.js, take a look at the following resources:
+### Сборка для продакшена
+```bash
+npm run build
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Адаптивность
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Сайт корректно отображается на всех устройствах:
 
-## Deploy on Vercel
+- 📺 Desktop (1440px+)
+- 💻 Laptop (1024px+)
+- 📱 Tablet (768px+)
+- 📱 Mobile (320px+)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Дизайн
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Визуальный стиль основан на макете Figma:
+- Тёмная цветовая схема (`#0A0A0F` base)
+- Градиентные акценты (`#FF3BFF`, `#5C24FF`, `#D94FD5`)
+- Glassmorphism эффекты
+- Плавные анимации через Framer Motion
+
+## SEO
+
+- ✅ Семантическая HTML разметка
+- ✅ Meta description и Title
+- ✅ OpenGraph теги
+- ✅ Twitter Card
+- ✅ JSON-LD schema.org для отзывов
+
+## Деплой
+
+Проект задеплоен на Vercel:
+
+👉 [https://next-learn.vercel.app](https://next-learn.vercel.app)
+
+## Разработка
+```bash
+# Линтинг
+npm run lint
+
+# Билд
+npm run build
+```

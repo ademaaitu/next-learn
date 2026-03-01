@@ -1,18 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-clash: "Syne", sans-serif;
-  --font-satoshi: "Space Grotesk", sans-serif;
-}
-
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
@@ -20,44 +13,13 @@ html {
 }
 
 body {
-  background-color: #0a0a0f;
-  color: #e8e8f0;
-  font-family: var(--font-satoshi);
+  background-color: #0A0A0F;
+  color: #E8E8F0;
   overflow-x: hidden;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #0a0a0f;
-}
-::-webkit-scrollbar-thumb {
-  background: #6c63ff;
-  border-radius: 3px;
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0A0A0F; }
+::-webkit-scrollbar-thumb { background: #6C63FF; border-radius: 3px; }
 
-::selection {
-  background: rgba(108, 99, 255, 0.4);
-  color: #fff;
-}
-
-@layer utilities {
-  .text-gradient {
-    background: linear-gradient(135deg, #6c63ff 0%, #00d4ff 50%, #ff6b6b 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .glass {
-    background: rgba(22, 22, 31, 0.6);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(108, 99, 255, 0.15);
-  }
-
-  .glow-sm {
-    box-shadow: 0 0 20px rgba(108, 99, 255, 0.2);
-  }
-}
+::selection { background: rgba(108,99,255,0.4); color: #fff; }

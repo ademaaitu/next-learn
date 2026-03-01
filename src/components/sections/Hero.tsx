@@ -23,7 +23,7 @@ export default function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-[#0A0A0F]">
+      {/* <div className="absolute inset-0 bg-[#0A0A0F]">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#6C63FF]/20 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-[#00D4FF]/10 rounded-full blur-[100px] pointer-events-none" />
         <div
@@ -34,8 +34,32 @@ export default function Hero() {
             backgroundSize: "60px 60px",
           }}
         />
+      </div> */}
+      {/* Bottom background image with gradient overlay */}
+      <div className="absolute bottom-0 left-0 right-0 h-[60%] pointer-events-none">
+        {/* Gradient fade from top and sides */}
+        <div
+          className="absolute inset-0 z-10"
+          style={{
+            background:
+              "linear-gradient(to bottom, #0A0A0F 0%, transparent 25%, transparent 75%, #0A0A0F 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-0 z-10"
+          style={{
+            background:
+              "linear-gradient(to right, #0A0A0F 0%, transparent 20%, transparent 80%, #0A0A0F 100%)",
+          }}
+        />
+        {/* Actual image */}
+        <img
+          src="/hero-bg.png"
+          alt=""
+          className="w-full h-full object-cover object-top opacity-40"
+        />
+      
       </div>
-
       {/* Floating orbs */}
       <motion.div
         animate={{ y: [0, -20, 0] }}
@@ -66,30 +90,26 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 text-center">
         {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6C63FF]/10 border border-[#6C63FF]/30 text-[#6C63FF] text-sm font-medium mb-8"
-        >
-          <Sparkles className="w-4 h-4" />
-          AI-Powered Education Platform
-          <span className="w-1.5 h-1.5 rounded-full bg-[#00D4FF] animate-pulse" />
-        </motion.div>
 
         {/* Heading */}
-        <motion.h1
+        <motion.h3
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.05] tracking-tight mb-6"
+          className="font-heading text-lg sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-6"
         >
-          Learn Smarter.
-          <br />
-          <span className="bg-gradient-to-r from-[#6C63FF] via-[#00D4FF] to-[#FF6B6B] bg-clip-text text-transparent">
-            Grow Faster.
+          <span
+            className="bg-clip-text text-transparent inline-block"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, #FF3BFF, #ECBFBF, #5C24FF, #D94FD5)",
+            }}
+          >
+            THE BEST WEBSITE EVER
           </span>
-        </motion.h1>
+          <br />
+          Scalable.
+        </motion.h3>
 
         {/* Subtitle */}
         <motion.p
@@ -98,9 +118,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-[#6B6B80] text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          NextLearn uses cutting-edge AI to personalize your learning path.
-          Master any skill with adaptive courses, real-time feedback, and a
-          community of 120K+ learners worldwide.
+          Our technology performing fast blockchain (120K TPS) and it has
+          guaranteed AI-based data security. Proof of Stake, its consensus
+          algorithm enables unlimited speeds.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -112,18 +132,31 @@ export default function Hero() {
         >
           <a
             href="#get-started"
-            className="group flex items-center gap-2 px-8 py-4 rounded-xl bg-[#6C63FF] hover:bg-[#5a52d5] text-white font-semibold text-base transition-all duration-300 shadow-lg shadow-[#6C63FF]/25 hover:shadow-[#6C63FF]/40 hover:scale-105"
+            className="group relative flex items-center justify-center gap-2 text-white font-semibold text-base transition-all duration-300 hover:scale-105"
+            style={{
+              width: "176px",
+              height: "70px",
+              borderRadius: "100px",
+              border: "2px solid transparent",
+              backgroundImage:
+                "linear-gradient(#0A0A0F, #0A0A0F), linear-gradient(135deg, #FF3BFF, #ECBFBF, #5C24FF, #D94FD5)",
+              backgroundOrigin: "border-box",
+              backgroundClip: "padding-box, border-box",
+            }}
           >
-            Get Started Free
+            Get Started
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
 
           <a
-            href="#solutions"
-            className="group flex items-center gap-2 px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-semibold text-base transition-all duration-300"
+            href="#get-started"
+            className="group relative border border-white rounded-full flex items-center justify-center gap-2 text-white font-semibold text-base transition-all duration-300 hover:scale-105"
+            style={{
+              width: "176px",
+              height: "70px",
+            }}
           >
-            <Play className="w-4 h-4 text-[#00D4FF]" />
-            Watch Demo
+            Read More
           </a>
         </motion.div>
 
